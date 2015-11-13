@@ -5,14 +5,14 @@ from os import listdir
 
 def main():
 
-    doc_types = ['pdf', 'txt', 'doc', 'docx']
-    pic_types = ['jpg', 'gif', 'png']
+    doc_types = ['pdf', 'txt', 'doc', 'docx', 'ppt', 'pptx']
+    pic_types = ['jpg', 'gif', 'png', 'tiff', 'exif', 'bmp']
     mus_types = ['mp3', 'wav', 'mid', 'flac']
-    vid_types = ['mp4', 'mkv']
+    vid_types = ['mp4', 'mkv', 'webm', 'flv', 'avi', 'wmv', ]
 
     pc_user = input("Please enter the name of the user folder: ")
 
-    source = "C:/Users/" + pc_user + "/Desktop"
+    source = "C:/Users/" + pc_user + "/Downloads"
 
     doc_dest = "C:/Users/" + pc_user + "/Documents"
     pic_dest = "C:/Users/" + pc_user + "/Pictures"
