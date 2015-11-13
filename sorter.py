@@ -5,9 +5,14 @@ from os import listdir
 
 def main():
 
+    doc_types = ['pdf', 'txt', 'doc', 'docx']
+    pic_types = ['jpg', 'gif', 'png']
+    mus_types = ['mp3', 'wav', 'mid', 'flac']
+    vid_types = ['mp4', 'mkv']
+
     pc_user = input("Please enter the name of the user folder: ")
 
-    source = "C:/Users/" + pc_user + "/Downloads"
+    source = "C:/Users/" + pc_user + "/Desktop"
 
     doc_dest = "C:/Users/" + pc_user + "/Documents"
     pic_dest = "C:/Users/" + pc_user + "/Pictures"
@@ -16,19 +21,41 @@ def main():
 
     files = [f for f in listdir(source)]
 
-    print(files)
+    for i in files: 
 
-    type = parseFile(files[0])
+        type = parseFile(i)
 
-    print(type)
+        print(type)
+
+        if type in doc_types: 
+            print("Sent to docs\n")
+        elif type in pic_types: 
+            print("Sent to pics\n")
+        elif type in mus_types: 
+            print("Sent to music\n")
+        elif type in vid_types: 
+            print("Sent to Videos\n")
+        elif type == None: 
+            print("Directories cannot be moved\n")
+
+
 
 def parseFile(f):
 
-        fileType = f.split(".")
+    print(f)
 
-        print(fileType[1])
+    fileType = f.split(".")
 
+    length = len(fileType)
+
+    if length > 1: 
         return fileType[1]
+    else: 
+        return None
+
+def moveFile(s, d):
+
+    print("hello")
 
 if __name__ == "__main__":
     main()
