@@ -52,7 +52,7 @@ def parseFile(f):
     fileType = f.split(".")
 
     if len(fileType) > 1: 
-        return fileType[1]
+        return fileType[len(fileType) - 1]
     else: 
         return None
 
