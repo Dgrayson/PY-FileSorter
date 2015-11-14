@@ -5,6 +5,10 @@ This script currently only works for Windows Operating Sytems and moves files fr
 File types supported are 
 
 Documents: .pdf, .txt, .doc, .docx, .ppt, .pptx
+
 Image:     .jpg, .gif, .png, .tiff, .exif, .bmp
+
 Music:     .mp3, .wav, .mid, .flac
+
 Video:     .mpd, .mkv, .webm, .flv, .avi, .wmv
+
