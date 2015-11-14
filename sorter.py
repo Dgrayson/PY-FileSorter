@@ -1,5 +1,6 @@
 __author__ = 'dgrayson'
 
+import os
 from os import rename
 from os import listdir
 
@@ -12,7 +13,7 @@ def main():
 
     pc_user = input("Please enter the name of the user folder: ")
 
-    source = "C:/Users/" + pc_user + "/Downloads"
+    source = "C:/Users/" + pc_user + "/Desktop"
 
     doc_dest = "C:/Users/" + pc_user + "/Documents"
     pic_dest = "C:/Users/" + pc_user + "/Pictures"
@@ -25,18 +26,22 @@ def main():
 
         type = parseFile(i)
 
-        print(type)
-
         if type in doc_types: 
             print("Sent to docs\n")
+            moveFile(i, doc_dest, source)
         elif type in pic_types: 
             print("Sent to pics\n")
+            moveFile(i, pic_dest, source)
         elif type in mus_types: 
             print("Sent to music\n")
+            moveFile(i, mus_dest, source)
         elif type in vid_types: 
             print("Sent to Videos\n")
+            moveFile(i, vid_dest, source)
         elif type == None: 
             print("Directories cannot be moved\n")
+        else: 
+            print("Invalid file type, File not moved")
 
 
 
@@ -46,16 +51,24 @@ def parseFile(f):
 
     fileType = f.split(".")
 
-    length = len(fileType)
-
-    if length > 1: 
+    if len(fileType) > 1: 
         return fileType[1]
     else: 
         return None
 
-def moveFile(s, d):
+def moveFile(i, d, s):
 
-    print("hello")
+    dest_files = [f for f in listdir(d)]
+
+    destination = d + "/" + i
+    source = s + "/" + i
+
+    if not os.path.isfile(destination): 
+        os.rename(source, destination)
+    else: 
+        print("File already exists in destination")
+
+    
 
 if __name__ == "__main__":
     main()
