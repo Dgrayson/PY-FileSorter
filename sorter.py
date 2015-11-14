@@ -13,7 +13,7 @@ def main():
 
     pc_user = input("Please enter the name of the user folder: ")
 
-    source = "C:/Users/" + pc_user + "/Desktop"
+    source = "C:/Users/" + pc_user + "/Downloads"
 
     doc_dest = "C:/Users/" + pc_user + "/Documents"
     pic_dest = "C:/Users/" + pc_user + "/Pictures"
