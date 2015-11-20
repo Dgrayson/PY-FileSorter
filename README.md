@@ -12,3 +12,4 @@ Music:     .mp3, .wav, .mid, .flac
 
 Video:     .mpd, .mkv, .webm, .flv, .avi, .wmv
 
+Will add ability to take in command line arguments at a later date
